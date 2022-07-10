@@ -1,0 +1,21 @@
+Instalación de WSL para poder usar docker en un Windows:
+
+  Para habilitar WSL2{
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+    Activar las características de virtualización.
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    };
+  Una vez habilitado{
+    Colocar por defecto WSL 2:
+      wsl --set-default-version 2
+
+    Para colocar por defecto Ubuntu como la distribución por defecto en docker desktop(este paso debe realizarse descargar la imagen de ubunto desde el la microsoft app): 
+      wsl --set-default ubuntu-22.04(o la versión final que haya instalado)
+
+    --------------
+    A tener en cuenta.
+
+    Al manejar docker desktop es mejor dejar que este maneje la ubicación de los contenedores para evitar errores al cargar estos.
+
+    Ubicación de contenedores en WSL: \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes
